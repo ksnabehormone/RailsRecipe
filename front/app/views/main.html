@@ -1,23 +1,27 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>読了</th>
+                <th>名前</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="book in books">
+                <td><input type="checkbox" ng-model='book.finished_flg'/></td>
+                <td>{{book.name}}</td>
+                <td align="right"><button class="btn btn-danger" ng-click="deleteBook($index)">削除</button></td>
+                <td align="right"><button class="btn btn-primary" ng-click="updateBook($index)">更新</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="text" class="form-control" ng-model="new_name"></td>
+                <td align="right"><button class="btn btn-primary" ng-click="addBook()">追加</button></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-info" ng-click='allStatusUpdate()'>更新</button>
 </div>

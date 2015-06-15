@@ -1,6 +1,9 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
+  # ADD:認証は今回はスキップ。。
+  skip_before_action :verify_authenticity_token
+
   # GET /books
   # GET /books.json
   def index

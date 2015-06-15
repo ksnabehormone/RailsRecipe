@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 # ActiveRecordのモデルにhas_secure_password属性を設定出来るライブラリ
 gem 'bcrypt', '~> 3.1.7'
 
+# クロスオリジン対応 -> 外部APIからリクエスト可能
+gem 'rack-cors', :require => 'rack/cors', group: [:development, :test]
+
 # 余計なログを出力させないライブラリ
 gem 'quiet_assets', group: :development
 
